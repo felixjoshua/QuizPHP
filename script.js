@@ -1,4 +1,3 @@
-// State Management
 let currentState = {
     currentQuestion: 0,
     answers: {},
@@ -8,7 +7,6 @@ let currentState = {
     playerNIM: ''
 };
 
-// Timer Management
 function startTimer() {
     clearInterval(currentState.timer);
     currentState.timer = setInterval(() => {
@@ -28,7 +26,6 @@ function resetTimer() {
     document.getElementById('timer').textContent = currentState.timeLeft;
 }
 
-// Question Display and Navigation
 function displayQuestion() {
     const question = quizData[currentState.currentQuestion];
     const container = document.getElementById('questionContainer');
@@ -69,12 +66,10 @@ function displayQuestion() {
     startTimer();
 }
 
-// Submit Quiz
 function submitQuiz() {
     clearInterval(currentState.timer);
     const { totalScore, breakdown } = calculateScore();
 
-    // Send data to the server
     const formData = new FormData();
     formData.append('name', currentState.playerName);
     formData.append('nim', currentState.playerNIM);
@@ -87,6 +82,6 @@ function submitQuiz() {
         body: formData
     }).then(response => response.json())
       .then(data => {
-          console.log(data); // Display the response data
+          console.log(data); 
       });
 }
