@@ -1,5 +1,4 @@
 <?php
-// File: data.php
 $quizData = [
     [
         'type' => 'multiple',
@@ -21,5 +20,4 @@ $quizData = [
         'correct' => 'Papua',
         'points' => 5
     ],
-    // Tambahkan data lainnya sesuai kebutuhan
 ];
